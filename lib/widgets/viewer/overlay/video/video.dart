@@ -68,6 +68,13 @@ class _VideoControlOverlayState extends State<VideoControlOverlay> with SingleTi
               scale: scale,
             ),
             const SizedBox(height: 8),
+            Center(
+              child: PlayToggler(
+                controller: controller,
+                onPressed: () => widget.onActionSelected(EntryAction.videoTogglePlay),
+              ),
+            ),
+            const SizedBox(height: 8),
             Row(
               textDirection: ViewerBottomOverlay.actionsDirection,
               children: [

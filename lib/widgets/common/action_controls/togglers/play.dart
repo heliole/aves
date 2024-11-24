@@ -82,14 +82,16 @@ class _PlayTogglerState extends State<PlayToggler> with SingleTickerProviderStat
             text: text,
             icon: Icon(isPlaying ? AIcons.pause : AIcons.play),
           )
-        : IconButton(
-            icon: AnimatedIcon(
-              icon: AnimatedIcons.play_pause,
-              progress: _playPauseAnimation,
+        : Center(
+            child: IconButton(
+              icon: AnimatedIcon(
+                icon: AnimatedIcons.play_pause,
+                progress: _playPauseAnimation,
+              ),
+              onPressed: widget.onPressed,
+              focusNode: widget.focusNode,
+              tooltip: text,
             ),
-            onPressed: widget.onPressed,
-            focusNode: widget.focusNode,
-            tooltip: text,
           );
   }
 
