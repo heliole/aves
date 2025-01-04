@@ -40,7 +40,7 @@ class _ThumbnailScrollerState extends State<ThumbnailScroller> {
   late ScrollController _scrollController;
   bool _isAnimating = false, _isScrolling = false;
 
-  static const double thumbnailExtent = 48;
+  static const double thumbnailExtent = 76;
   static const double separatorWidth = 2;
   static const double itemExtent = thumbnailExtent + separatorWidth;
 

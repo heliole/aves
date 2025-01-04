@@ -187,7 +187,6 @@ class Vaults extends ChangeNotifier {
   bool get needProtection => _unlockedDirPaths.isNotEmpty;
 
   void _onLockStateChanged() {
-    windowService.secureScreen(needProtection);
     notifyListeners();
   }
 }

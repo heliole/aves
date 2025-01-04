@@ -67,6 +67,12 @@ class _VideoControlOverlayState extends State<VideoControlOverlay> with SingleTi
               controller: controller,
               scale: scale,
             ),
+            VideoControlRow(
+              controller: controller,
+              scale: scale,
+              canOpenVideoPlayer: !entry.trashed,
+              onActionSelected: widget.onActionSelected,
+            ),
             const SizedBox(height: 8),
             Row(
               textDirection: ViewerBottomOverlay.actionsDirection,
@@ -76,12 +82,6 @@ class _VideoControlOverlayState extends State<VideoControlOverlay> with SingleTi
                     controller: controller,
                     scale: scale,
                   ),
-                ),
-                VideoControlRow(
-                  controller: controller,
-                  scale: scale,
-                  canOpenVideoPlayer: !entry.trashed,
-                  onActionSelected: widget.onActionSelected,
                 ),
               ],
             ),

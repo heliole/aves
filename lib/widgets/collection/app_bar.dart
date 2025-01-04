@@ -35,6 +35,7 @@ import 'package:aves/widgets/common/tile_extent_controller.dart';
 import 'package:aves/widgets/dialogs/tile_view_dialog.dart';
 import 'package:aves/widgets/filter_grids/common/action_delegates/chip.dart';
 import 'package:aves/widgets/search/search_delegate.dart';
+import 'package:aves/widgets/settings/settings_page.dart';
 import 'package:aves_model/aves_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -256,8 +257,13 @@ class _CollectionAppBarState extends State<CollectionAppBar> with SingleTickerPr
       onPressed = () => context.read<Selection<AvesEntry>>().browse();
       tooltip = MaterialLocalizations.of(context).backButtonTooltip;
     } else {
-      onPressed = Scaffold.of(context).openDrawer;
-      tooltip = MaterialLocalizations.of(context).openAppDrawerTooltip;
+      onPressed = () {
+        Navigator.maybeOf(context)?.push(MaterialPageRoute(
+          settings: RouteSettings(name: SettingsPage.routeName),
+          builder: (_) => const SettingsPage(),
+        ));
+      };
+      // tooltip = MaterialLocalizations.of(context).openAppDrawerTooltip;
     }
     return IconButton(
       // key is expected by test driver

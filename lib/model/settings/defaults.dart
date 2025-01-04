@@ -122,7 +122,7 @@ class SettingsDefaults {
   static const slideshowShuffle = false;
   static const slideshowFillScreen = false;
   static const slideshowAnimatedZoomEffect = true;
-  static const slideshowTransition = ViewerTransition.fade;
+  static const slideshowTransition = ViewerTransition.none;
   static const slideshowVideoPlayback = SlideshowVideoPlayback.playMuted;
   static const slideshowInterval = 5;
 
